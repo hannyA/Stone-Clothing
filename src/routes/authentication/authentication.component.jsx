@@ -9,6 +9,7 @@ import {
 } from "../../utils/firebase/firebase.utils";
 
 import SignUpForm from "../../components/sign-up-form/sign-up-form.component";
+import SignInForm from "../../components/sign-in-form/sign-in-form.component";
 
 const Authentication = () => {
   // useEffect(async () => {
@@ -17,10 +18,6 @@ const Authentication = () => {
   //     const userDocRef = await createUserDocumentFromAuth(response.user);
   //   }
   // }, []);
-  const logGoogleUser = async () => {
-    const { user } = await signInWithGooglePopup();
-    const userDocRef = await createUserDocumentFromAuth(user);
-  };
 
   console.log("Sign up called");
   // const logGoogleRedirectUser = async () => {
@@ -30,7 +27,8 @@ const Authentication = () => {
   return (
     <div>
       <h1>Sign in </h1>
-      <button onClick={logGoogleUser}>Sign in with Google</button>
+      <SignInForm />
+      {/* <button onClick={logGoogleUser}>Sign in with Google</button> */}
       {/* <button onClick={signInWithGoogleRedirect}>
         Sign in with Google Redirect
       </button> */}
