@@ -22,6 +22,7 @@ const SignIn = () => {
     const userDocRef = await createUserDocumentFromAuth(user);
   };
 
+  console.log("Sign up called");
   // const logGoogleRedirectUser = async () => {
   //   const { user } = await signInWithGoogleRedirect();
   //   console.log(user);
