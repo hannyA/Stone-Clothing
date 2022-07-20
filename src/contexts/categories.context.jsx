@@ -4,6 +4,7 @@ import {
   // addCollectionAndDocuments,
   getCategoriesAndCollection,
 } from "../utils/firebase/firebase.utils";
+
 export const CategoriesContext = createContext({
   categoriesMap: {},
 });
