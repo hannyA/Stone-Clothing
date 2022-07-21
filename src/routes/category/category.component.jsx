@@ -7,12 +7,7 @@ import { selectCategoriesMap } from "../../store/categories/categories.selector"
 
 const Category = () => {
   const { category } = useParams();
-  console.log("category component");
-  console.log(category);
   const categoriesMap = useSelector(selectCategoriesMap);
-
-  console.log("categoriesMap");
-  console.log(categoriesMap);
 
   const [products, setProducts] = useState(categoriesMap[category]);
 
