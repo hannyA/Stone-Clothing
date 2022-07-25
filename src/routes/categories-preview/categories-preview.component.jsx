@@ -4,18 +4,27 @@ import { Fragment } from "react";
 
 import { selectCategoriesMap } from "../../store/categories/categories.selector";
 
+import Spinner from "../../components/spinner/spinner.component";
+
+import { selectIsCategoriesLoading } from "../../store/categories/categories.selector";
+
 const CategoriesPreview = () => {
   const categoriesMap = useSelector(selectCategoriesMap);
+  const isLoading = useSelector(selectIsCategoriesLoading);
 
   return (
     <Fragment>
-      {Object.keys(categoriesMap).map((title) => {
-        const products = categoriesMap[title];
+      {isLoading ? (
+        <Spinner />
+      ) : (
+        Object.keys(categoriesMap).map((title) => {
+          const products = categoriesMap[title];
 
-        return (
-          <CategoryPreview key={title} title={title} products={products} />
-        );
-      })}
+          return (
+            <CategoryPreview key={title} title={title} products={products} />
+          );
+        })
+      )}
     </Fragment>
   );
 };
