@@ -6,7 +6,6 @@ import {
   selectCartTotal,
 } from "../../store/cart/cart.selector";
 
-import "./checkout.styles.scss";
 import {
   CheckoutContainer,
   CheckoutHeader,
